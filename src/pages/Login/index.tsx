@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "../../styles/pages/login.scss";
 import Lendsqr from "../../assets/lendsqr.svg";
 import Pablo from "../../assets/pablo-sign-in 1.svg";
@@ -14,7 +13,6 @@ const Index = () => {
   const { login } = AuthProvider();
 
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
-  const navigate = useNavigate();
 
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -23,7 +21,6 @@ const Index = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     login(users)
-    // navigate("/dashboard");
   };
 
   return (

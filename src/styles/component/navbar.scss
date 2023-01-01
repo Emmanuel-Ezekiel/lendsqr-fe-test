@@ -1,0 +1,116 @@
+nav {
+  width: 100vw;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #ffffff;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+
+  .nav-container {
+    width: 1343.66px;
+    height: 40px;
+    // margin: auto 43.67px auto 30px;
+    margin: auto;
+    position: relative;
+    display: flex;
+
+    .logo {
+      height: 30px;
+      width: 144.803955078125px;
+      // margin-left: 30px;
+    }
+
+    .search-container {
+      width: 400px;
+      height: 40px;
+      margin-left: 168px;
+      display: flex;
+      //   background: #ffffff;
+      //   opacity: 0.2;
+
+      input {
+        width: 344px;
+        height: 100%;
+        border-radius: 8px 0 0 8px;
+        border: 1px solid #213f7d;
+        background: #ffffff;
+        opacity: 0.2;
+        padding: 12px 20px;
+
+        &::placeholder {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+          color: #545f7d;
+          opacity: 0.7;
+        }
+
+        &:active {
+          border: none;
+        }
+      }
+
+      .searchIcon {
+        width: 56px;
+        height: 40px;
+        background: #39cdcc;
+        border-radius: 0 8px 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .nav-left {
+      width: 273.66px;
+      height: 40px;
+      margin-left: 357px;
+      display: flex;
+      align-items: center;
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-decoration-line: underline;
+        color: #213f7d;
+        cursor: pointer;
+      }
+
+      .notify {
+        height: 22.736698150634766px;
+        width: 19.674962997436523px;
+        margin-left: 20.16px;
+      }
+
+      .dropdown {
+        height: 22.736698150634766px;
+        width: 19.674962997436523px;
+        margin-left: 10.33px;
+      }
+
+      h2 {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #213f7d;
+        margin-left: 10px;
+      }
+
+      .profile-img {
+        height: 48px;
+        width: 48px;
+        margin-left: 43.16px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

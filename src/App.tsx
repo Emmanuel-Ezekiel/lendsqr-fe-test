@@ -12,16 +12,14 @@ import Dashboard from "./component/Dashboard/Index";
 import UserPage from "./pages/userPage/Index";
 import UserDetails from "./pages/userDetails/Index";
 
-
-
 const App = (): React.ReactElement => {
   return (
     <Router>
-      <Routes >
+      <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="users" element={<UserPage />} />
-          <Route path=":userId" element={<UserDetails />} />
+            <Route path="users" element={<UserPage />} />
+            <Route path="details" element={<UserDetails />} />
         </Route>
       </Routes>
     </Router>
