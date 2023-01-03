@@ -206,7 +206,7 @@
         td {
           border-bottom: 1px solid #dddddd;
           text-align: left;
-          padding: 18px 0;
+          padding: 14px 0;
           font-weight: 400;
           font-size: 12px;
           line-height: 16px;
@@ -218,18 +218,31 @@
           font-size: 14px;
           line-height: 16px;
           border-radius: 100px;
-          height: 30px !important;
+          height: 16px !important;
           width: 100px !important;
-
-          //   text-align: center;
+          background: rgba(57, 205, 98, 0.06);
+          border-radius: 100px;
           color: #39cd62;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 14px;
         }
 
         .Gray {
           font-weight: 400;
           font-size: 14px;
           line-height: 16px;
-          //   text-align: center;
+          border-radius: 100px;
+          height: 16px !important;
+          width: 100px !important;
+          background: rgba(84, 95, 125, 0.06);
+          border-radius: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 14px;
+          font-weight: 400;
           color: #545f7d;
         }
 
@@ -237,6 +250,16 @@
           font-weight: 400;
           font-size: 14px;
           line-height: 16px;
+          border-radius: 100px;
+          height: 16px !important;
+          width: 100px !important;
+          background: rgba(233, 178, 0, 0.06);
+          border-radius: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 14px;
+          font-weight: 400;
           color: #e9b200;
         }
 
@@ -244,10 +267,17 @@
           font-weight: 400;
           font-size: 14px;
           line-height: 16px;
-          //   text-align: center;
-          color: #e4033b;
-          //   background: ;
           border-radius: 100px;
+          height: 16px !important;
+          width: 100px !important;
+          background: rgba(228, 3, 59, 0.06);
+          border-radius: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 14px;
+          font-weight: 400;
+          color: #e4033b;
         }
 
         th {

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import moment from "moment";
 import { AuthProvider } from "../../hooks/useAuth/index";
-import Pagination from "../../component/pagination";
+import Pagination from "../pagination";
 import {
   numbers,
   ListState,
