@@ -26,6 +26,10 @@ import iconLoan from "../../assets/icon-loan.svg"
 import iconSaving from "../../assets/icon-saving.svg"
 import iconUsers from "../../assets/icon-user2.svg"
 
+import Eyes from "../../assets/eyes.svg"
+import AddUser from "../../assets/np_adduser.svg"
+import Delete from "../../assets/np_delete-friend.svg"
+
 
 
 export interface Data {
@@ -41,6 +45,15 @@ export interface Data2 {
     image?: any;
 }
 
+interface Option2 {
+    number: string;
+    id: number
+}
+interface Modal {
+    id: number;
+    image?: any;
+    name: string;
+}
 
 export const BUSINESS_DATA: Data[] = [
     {
@@ -183,4 +196,99 @@ export const WIDGET_DATA: Data2[] = [
         name: 'Users with Savings',
         image: iconSaving
     },
+]
+
+
+export const numbers: Option2[] = [ 
+    {
+    id: 0,
+    number: "100"
+    },
+    {
+    id: 1,
+    number: "90"
+    },
+    {
+    id: 2,
+    number: "80"
+    },
+    {
+    id: 3,
+    number: "70"
+    },
+    {
+    id: 4,
+    number: "60"
+    },
+    {
+    id: 5,
+    number: "50"
+    },
+    {
+    id: 6,
+    number: "40"
+    },
+    {
+    id: 7,
+    number: "30"
+    },
+    {
+    id: 8,
+    number: "20"
+    },
+    {
+    id: 9,
+    number: "10"
+    },
+  ];
+
+
+export const ListState: Array<string> = [
+    "Inactive",
+    "Pending",
+    "Blacklisted",
+    "Pending",
+    "Active",
+    "Active",
+    "Blacklisted",
+    "Inactive",
+    "Inactive",
+  ];
+
+  export const _Status: Option2[] = [ 
+    {
+    id: 0,
+    number: "Inactive"
+    },
+    {
+    id: 1,
+    number: "Pending"
+    },
+    {
+    id: 2,
+    number:  "Blacklisted"
+    },
+    {
+    id: 3,
+    number: "Active"
+    },
+]
+
+export const popMondal: Modal[] = [
+    {
+        id: 0,
+        image: Eyes,
+        name: "View Details"
+    },
+    {
+        id: 1,
+        image: AddUser,
+        name: "Blacklist User"
+    },
+    {
+        id: 2,
+        image: Delete,
+        name: "Activate User"
+    },
+
 ]
