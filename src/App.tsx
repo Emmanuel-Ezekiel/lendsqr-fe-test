@@ -10,7 +10,7 @@ import {
 import Login from "./pages/Login/index";
 import Dashboard from "./component/Dashboard/Index";
 import UserPage from "./pages/userPage/Index";
-import UserDetails from "./pages/userDetails/Index";
+
 
 const App = (): React.ReactElement => {
   return (
@@ -19,7 +19,6 @@ const App = (): React.ReactElement => {
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />}>
             <Route path="users" element={<UserPage />} />
-            <Route path="details" element={<UserDetails />} />
         </Route>
       </Routes>
     </Router>

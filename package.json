@@ -21,6 +21,7 @@
     "react": "^18.2.0",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
+    "react-hooks-testing-library": "^0.6.0",
     "react-icons": "^4.7.1",
     "react-js-pagination": "^3.0.3",
     "react-paginate": "^8.1.4",
@@ -56,8 +57,11 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/react-datepicker": "^4.8.0",
     "@types/react-js-pagination": "^3.0.4",
+    "@types/react-test-renderer": "^18.0.0",
+    "@types/testing-library__react-hooks": "^4.0.0",
     "sass": "^1.57.1"
   }
 }

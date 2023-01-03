@@ -25,7 +25,7 @@ const Index = () => {
 
   return (
     <>
-      <div className="login">
+      <div className="login"  data-testid="login-page">
         <div className="loginContainer">
           <div className="login-left">
             <div className="logo">

@@ -2,9 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../useLocalStorage/index";
 import axios from "axios";
 
-
-
-
 export const AuthProvider = () => {
   const [user, setUser] = useLocalStorage("user", null);
   const [userDetails, setUserDetails] = useLocalStorage("userDetails", null);
@@ -42,5 +39,6 @@ export const AuthProvider = () => {
     getUserDetails ,
     
   }
-
 }
+
+

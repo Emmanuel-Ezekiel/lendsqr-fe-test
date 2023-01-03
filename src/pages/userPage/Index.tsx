@@ -26,7 +26,7 @@ const Index = () => {
   return (
     <>
       {isUserOpen && (
-        <div className="user-container">
+        <div className="user-container" data-testId="user-page">
           <h2>Users</h2>
 
           <div className="widget">

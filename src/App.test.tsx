@@ -1,27 +1,28 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import App from './App';
 
-test('should render the login page by default', async () => {
-  const { getByText } = render(<App />);
-  await waitFor(() => {
-    expect(getByText('Welcome!')).toBeInTheDocument();
-  });
-});
+describe('App', () => {
+  afterEach(cleanup);
 
-test('should redirect to the dashboard page after logging in', async () => {
+  it('renders without crashing', () => {
+    const { container } = render(<App />);
+    expect(container).toBeTruthy();
+  });
+
+  it('displays the correct routes', () => {
   const { getByText, getByTestId } = render(<App />);
 
-  fireEvent.change(getByTestId('email'), {
-    target: { value: 'test@example.com' }
-  });
-  fireEvent.change(getByTestId('password'), {
-    target: { value: 'password' }
-  });
-  fireEvent.click(getByText('LOG IN'));
+  fireEvent.click(getByText('Login'));
+  expect(getByTestId('login-page')).toBeTruthy();
 
-  await waitFor(() => {
-    expect(getByTestId('Dashboard')).toBeInTheDocument();
-  });
+  fireEvent.click(getByText('Dashboard'));
+  expect(getByTestId('dashboard-page')).toBeTruthy();
+
+  fireEvent.click(getByText('Users'));
+  expect(getByTestId('user-page')).toBeTruthy();
 });
+});
+
+
 

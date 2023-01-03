@@ -14,7 +14,7 @@ const Index = () => {
   }
 
   return (
-    <div data-testid="Dashboard" className="dash-container">
+    <div data-testid="dashboard-page" className="dash-container">
       <Navbar />
       <main>
         <Sidebar />
