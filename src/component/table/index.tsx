@@ -10,6 +10,7 @@ import {
   _Status,
   popMondal,
 } from "../../component/Data/Types";
+import Calendar from "../../assets/np_calendar.svg"
 
 interface Table {
   table: any;
@@ -221,6 +222,9 @@ const Index = ({ table, table2 }: Table) => {
                   value={date}
                   onChange={(event) => setDate(event.target.value)}
                 />
+                <div className="calendar">
+                  <img  src={Calendar} alt="calendar"/>
+                </div>
               </div>
               <div className="input-group">
                 <label htmlFor="phoneNumber">Phone Number</label>
