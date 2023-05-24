@@ -35,7 +35,8 @@ const Login = () => {
         </div>
 
         <div className="right">
-          <form action="">
+          <form onSubmit={handleSubmit}>
+            <img src={Lendsqr} alt="" className="mobile-logo" />
             <div className="head">
               <h2>Welcome!</h2>
               <p>Enter details to login.</p>
