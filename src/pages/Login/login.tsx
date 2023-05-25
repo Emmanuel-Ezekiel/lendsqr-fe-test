@@ -9,11 +9,11 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [passwordShown, setPasswordShown] = React.useState<boolean>(false);
 
   const { login } = ApiProvider();
 
-  const [passwordShown, setPasswordShown] = React.useState<boolean>(false);
-
+  //show password 
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };

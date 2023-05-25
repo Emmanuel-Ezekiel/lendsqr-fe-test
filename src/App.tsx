@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login/login";
 import Dashboard from "./pages/Dashboard/dashboard";
-import User from "./pages/user/user";
+import User from "./pages/allUsers/allUsers";
+import UserDetails from "./pages/userDetails/userDetails";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="users" element={<User />} />
+          <Route path="user/:userId" element={<UserDetails />} />
         </Route>
       </Routes>
     </Router>
