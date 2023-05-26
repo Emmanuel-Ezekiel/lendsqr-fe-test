@@ -5,7 +5,7 @@ import Pablo from "../../assets/pablo-sign-in 1.png";
 import ApiProvider from "../../utils/api/apiProvider";
 
 const Login = () => {
-  const [users, setUsers] = React.useState<{ email: string; password: any }>({
+  const [value, setValue] = React.useState<{ email: string; password: any }>({
     email: "",
     password: "",
   });
@@ -20,7 +20,7 @@ const Login = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    login(users);
+    login(value);
   };
 
   return (
@@ -50,9 +50,9 @@ const Login = () => {
                   id="email"
                   placeholder="Email"
                   onChange={(e) =>
-                    setUsers({ ...users, email: e.target.value })
+                    setValue({ ...value, email: e.target.value })
                   }
-                  value={users.email}
+                  value={value.email}
                 />
                 <input
                   type={passwordShown ? "text" : "password"}
@@ -61,9 +61,9 @@ const Login = () => {
                   placeholder="Password"
                   data-testid="password"
                   onChange={(e) =>
-                    setUsers({ ...users, password: e.target.value })
+                    setValue({ ...value, password: e.target.value })
                   }
-                  value={users.password}
+                  value={value.password}
                 />
                 <span onClick={togglePasswordVisiblity}>show</span>
                 <a href="">Forgot PASSWORD?</a>

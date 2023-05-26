@@ -11,7 +11,7 @@ const Dashboard = () => {
     <div className="dash-container">
       <NavBar />
       <main>
-        {/* <Sidebar /> */}
+        <Sidebar />
         {outlet}
       </main>
     </div>

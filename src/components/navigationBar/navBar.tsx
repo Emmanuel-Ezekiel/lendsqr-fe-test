@@ -22,14 +22,16 @@ import ApiProvider from "../../utils/api/apiProvider";
 const NavBar = () => {
   const [sidebarOpen, setSidebarOpen] = React.useState<boolean>(false);
 
-  const toggleSidebar = () => {
+  //open nav sidebar
+  const handleMenu = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  //logout Function
   const { logout } = ApiProvider();
 
   return (
-    <nav>
+    <header>
       <div className="nav-container">
         <div className="left">
           <img src={Lendsqr} alt="lendsqr" />
@@ -58,7 +60,7 @@ const NavBar = () => {
         <div className="logo">
           <img src={Lendsqr} alt="logo" />
         </div>
-        <HiOutlineMenuAlt3 className="humbuger" onClick={toggleSidebar} />
+        <HiOutlineMenuAlt3 className="humbuger" onClick={handleMenu} />
       </div>
       <div
         className={`navbar__sidebar ${
@@ -66,7 +68,7 @@ const NavBar = () => {
         }`}
       >
         <div className="navbar__sidebar-header">
-          <div className="navbar__sidebar-close" onClick={toggleSidebar}>
+          <div className="navbar__sidebar-close" onClick={handleMenu}>
             <MdCancel className="navbar__sidebar-close" />
           </div>
         </div>
@@ -115,7 +117,7 @@ const NavBar = () => {
           <span>v1.2.0</span>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

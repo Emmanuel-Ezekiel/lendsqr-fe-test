@@ -26,7 +26,7 @@ const ApiProvider = () => {
       const response = await axios.get(
         "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users"
       );
-      setUsers(response);
+      setUsers(response.data);  // set all user to localStorage;
     } catch (err) {
       console.log(err);
     }

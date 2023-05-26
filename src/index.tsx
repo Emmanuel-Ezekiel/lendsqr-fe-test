@@ -1,15 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Suspense, useState, CSSProperties } from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/index.scss";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import ClipLoader from "react-spinners/ClipLoader";
+
+const override: CSSProperties = {
+  display: "block",
+  // margin: "auto",
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  borderColor: "#36d7b7",
+};
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Suspense
+      fallback={
+        <ClipLoader
+          color="#36d7b7"
+          loading={true}
+          cssOverride={override}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      }
+    >
+      <App />
+    </Suspense>
   </React.StrictMode>
 );
 
