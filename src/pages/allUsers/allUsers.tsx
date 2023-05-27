@@ -80,7 +80,7 @@ const User = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = array?.slice(indexOfFirstItem, indexOfLastItem);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
+
 
   const totalPages = Math.ceil(allUsers?.length / itemsPerPage);
 
@@ -128,6 +128,7 @@ const User = () => {
             allUsers={currentItems}
             setOpenAllUsers={setOpenAllUsers}
             setOpenUserDetails={setOpenUserDetails}
+            setCombinedArray={setCombinedArray}
           />
 
           <div className="bottom">

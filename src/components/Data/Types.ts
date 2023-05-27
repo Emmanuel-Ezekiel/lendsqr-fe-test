@@ -304,6 +304,48 @@ export const ListState: Array<string> = [
     number: "Active"
     },
 ]
+  export const _Org: Option2[] = [ 
+    {
+    id: 0,
+    number: "labore-dolor-et"
+    },
+    {
+    id: 1,
+    number: "accusamus-minima-repudiandae"
+    },
+    {
+    id: 2,
+    number:  "natus-harum-unde"
+    },
+    {
+    id: 3,
+    number: "aliquam-velit-ab"
+    },
+    {
+    id: 4,
+    number: "quas-et-ut"
+    },
+    {
+    id: 5,
+    number: "accusantium-voluptatem-voluptate"
+    },
+    {
+    id: 6,
+    number: "sint-ipsa-voluptatem"
+    },
+    {
+    id: 7,
+    number: "omnis-consequatur-sunt"
+    },
+    {
+    id: 8,
+    number: "officia-sed-accusamus"
+    },
+    {
+    id: 9,
+    number: "tempore-laudantium-aut"
+    },
+]
 
 export const popMondal: Modal[] = [
     {

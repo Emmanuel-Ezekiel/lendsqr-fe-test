@@ -9,17 +9,26 @@ import {
 } from "../../components/Data/Types";
 import moment from "moment";
 import ApiProvider from "../../utils/api/apiProvider";
+import FilterModal from "../filterModal/index";
+import Modal from "../userModal/index";
 
 interface Props {
   allUsers: any;
   setOpenUserDetails: any;
   setOpenAllUsers: any;
+  setCombinedArray: any;
 }
 
-const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
+const Index = ({
+  allUsers,
+  setOpenUserDetails,
+  setOpenAllUsers,
+  setCombinedArray,
+}: Props) => {
   const { getUserDetailsById } = ApiProvider();
-  const {  setUserId } = useContext(UserContext);
-
+  const { setUserId } = useContext(UserContext);
+  const [openModel, setOpenModel] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   //Route to UserDetails
   const handleRoute = () => {
@@ -27,14 +36,33 @@ const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
     setOpenUserDetails(true);
   };
 
+  // open Filter Modal
+  const handleOpenModel = () => {
+    setOpenModel(true);
+  };
+
+
+  // Open user modal
+  const handleIsModel = () => {
+    setIsOpen(true);
+  };
 
   return (
     <div className="Table-container">
+      {openModel && (
+        <FilterModal
+          allUsers={allUsers}
+          setCombinedArray={setCombinedArray}
+          setOpenModel={setOpenModel}
+          setIsOpen={setIsOpen}
+        />
+      )}
+
       <table>
         <thead>
           <tr>
             {TABLE_HEAD.map((item: any, index: number) => (
-              <th key={item.id}>
+              <th key={item.id} onClick={handleOpenModel}>
                 <div className="header-content">
                   {item.name}
                   {index !== TABLE_HEAD.length - 1 && ( // Check if it's not the last index
@@ -61,11 +89,11 @@ const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
           {allUsers?.map((row: any) => (
             <tr
               key={row.id}
-              onClick={() => {
-                getUserDetailsById(row?.id);
-                setUserId(row?.id)
-                handleRoute();
-              }}
+                onClick={() => {
+                  getUserDetailsById(row?.id);
+                  setUserId(row?.id)
+                  handleRoute();
+                }}
             >
               {/* <Link to={`${row.id}`} relative="path"> */}
               <td>{row.orgName}</td>
@@ -83,6 +111,7 @@ const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
                   viewBox="0 0 20 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  onClick={handleIsModel}
                 >
                   <g clip-path="url(#clip0_5530_2634)">
                     <path
@@ -97,12 +126,12 @@ const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
                   </defs>
                 </svg>
               </td>
+              {isOpen && <Modal setIsOpen={setIsOpen}  handleRoute={handleRoute} id={row.id}/>}
               {/* </Link> */}
             </tr>
           ))}
         </tbody>
       </table>
-  
     </div>
   );
 };
