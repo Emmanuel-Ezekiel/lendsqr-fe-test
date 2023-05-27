@@ -17,20 +17,9 @@ interface Props {
 }
 
 const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
-  const { userStatus, updateUserStatus } = useContext(UserContext);
   const { getUserDetailsById } = ApiProvider();
+  const {  setUserId } = useContext(UserContext);
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
-
-  const combinedArray = allUsers?.map((obj: any, index: any): any => ({
-    ...obj,
-    status: userStatus,
-  }));
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = combinedArray?.slice(indexOfFirstItem, indexOfLastItem);
 
   //Route to UserDetails
   const handleRoute = () => {
@@ -38,7 +27,6 @@ const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
     setOpenUserDetails(true);
   };
 
-  //   console.log(combinedArray);
 
   return (
     <div className="Table-container">
@@ -70,11 +58,12 @@ const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
         </thead>
         <tbody>
           {/* Add table rows and data here */}
-          {currentItems?.map((row: any) => (
+          {allUsers?.map((row: any) => (
             <tr
               key={row.id}
               onClick={() => {
                 getUserDetailsById(row?.id);
+                setUserId(row?.id)
                 handleRoute();
               }}
             >
@@ -113,6 +102,7 @@ const Index = ({ allUsers, setOpenUserDetails, setOpenAllUsers }: Props) => {
           ))}
         </tbody>
       </table>
+  
     </div>
   );
 };

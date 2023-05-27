@@ -4,12 +4,16 @@ import React, { createContext, useState } from 'react';
 interface UserContextType {
   userStatus: string;
   updateUserStatus: (status: string) => void;
+  userId: any;
+  setUserId: any;
 }
 
 // Create the user context
 export const UserContext = createContext<UserContextType>({
   userStatus: '',
   updateUserStatus: () => {},
+  userId: null,
+  setUserId: null,
 });
 
 interface UserProviderProps {
@@ -19,6 +23,7 @@ interface UserProviderProps {
 // Create the user context provider
 export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [userStatus, setUserStatus] = useState<string>('inactive');
+  const [userId, setUserId] = useState<any>();
 
   // Update the user status
   const updateUserStatus = (status: string) => {
@@ -29,6 +34,8 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const contextValue: UserContextType = {
     userStatus,
     updateUserStatus,
+    userId,
+    setUserId
   };
 
   return (
