@@ -9,7 +9,6 @@ import Avatar from "../../assets/svg/avatar.svg";
 import Star1 from "../../assets/svg/np_star_1.svg";
 import Star2 from "../../assets/svg/np_star_2.svg";
 import { UserContext } from "../../utils/contextApi";
-import { Pagination } from "antd";
 
 //get all users Data from LocalStorage
 const value: any = window.localStorage.getItem("users");
@@ -26,13 +25,24 @@ const User = () => {
   const [activeTab, setActiveTab] = React.useState(0);
   const { userStatus, userId } = useContext(UserContext);
   const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
+  // const itemsPerPage = 9;
+  const totalItems = 100;
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+
+
+  //combined allUsers data with the Status
   const combinedArray = allUsers?.map((obj: any, index: any): any => ({
     ...obj,
     status: userStatus,
   }));
 
   const [array, setCombinedArray] = useState(combinedArray);
+
+  const currentItems = array?.slice(indexOfFirstItem, indexOfLastItem); //Page expression
 
   //toggle Tabs
   const handleTabClick = (index: any) => {
@@ -50,7 +60,7 @@ const User = () => {
     setCombinedArray(updatedArray);
   };
 
-  //Black list
+  //Black list user
   const handleBlacklist = () => {
     const updatedArray = combinedArray.map((obj: any) => {
       if (obj.id === userId) {
@@ -72,14 +82,6 @@ const User = () => {
     setOpenUserDetails(false);
   };
 
-  const [currentPage, setCurrentPage] = useState(1);
-  // const itemsPerPage = 9;
-  const totalItems = 100;
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = array?.slice(indexOfFirstItem, indexOfLastItem);
-  const startIndex = (currentPage - 1) * itemsPerPage;
 
 
   const totalPages = Math.ceil(allUsers?.length / itemsPerPage);

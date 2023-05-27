@@ -13,7 +13,6 @@ import Dashboard from "./pages/Dashboard/dashboard";
 // import UserDetails from "./pages/userDetails/userDetails";
 
 const User = React.lazy(() => import("./pages/allUsers/allUsers"));
-const UserDetails = React.lazy(() => import("./pages/userDetails/userDetails"));
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
         <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="users" element={<User />} />
-            <Route path=":id" element={<UserDetails />} />
           </Route>
       </Routes>
     </Router>
