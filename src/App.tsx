@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="users" element={<User />} />
-            <Route path="user/:userId" element={<UserDetails />} />
+            <Route path=":id" element={<UserDetails />} />
           </Route>
       </Routes>
     </Router>

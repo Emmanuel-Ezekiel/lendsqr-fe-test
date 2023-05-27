@@ -55,6 +55,37 @@ interface Modal {
     name: string;
 }
 
+export const TABLE_HEAD: any = [
+    {
+        id: 0,
+        name: "organization",
+    },
+    {
+        id: 1,
+        name: "Username",
+    },
+    {
+        id: 2,
+        name: "Email",
+    },
+    {
+        id: 3,
+        name: "Phone number",
+    },
+    {
+        id: 4,
+        name: "Date joined",
+    },
+    {
+        id: 5,
+        name: "Status",
+    },
+    {
+        id: 6,
+        name: "",
+    },
+]
+
 export const BUSINESS_DATA: Data[] = [
     {
         id: 0,

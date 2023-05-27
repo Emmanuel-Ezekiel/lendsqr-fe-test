@@ -4,6 +4,7 @@ import "./styles/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ClipLoader from "react-spinners/ClipLoader";
+import { UserProvider } from "./utils/contextApi";
 
 const override: CSSProperties = {
   display: "block",
@@ -31,7 +32,9 @@ root.render(
         />
       }
     >
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </Suspense>
   </React.StrictMode>
 );
